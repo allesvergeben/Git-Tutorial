@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kommando:merge</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<section id=Einleitung>
+<h1>Kommando: mergen</h1>
+<p>
+  <h2> Wofür nutze ich mergen?</h2>
+  <p>Nachdem Sie einzelne Branches erstellt und an ihnen gearbeitet haben,
+    möchten Sie diese nun natürlich zusammmenführen. Die einfachste Methode hierfür ist:
+    <strong> git merge </strong></p>
+    <p>
+    <h2> Wie verwende ich <strong>git merge</strong> </merge>?</h2>
+      <p>Wie bereits am Titel zu erkennen nutzen Sie zum mergen das Kommando <strong> git merge</strong> im folgenden Beispiel
+        erläutere ich das Kommando visuell.</p>
+        <img src="bild1.pdf" alt="Schritt1">
+      <h3>Schritt 1</h3>
+      <p>Zunächst zeigt master nun auf einen Commit mit zwei Vorgängern.
+        Wenn Sie den beiden Pfeilen immer weiter folgen, kommen Sie an jedem Commit im Repository vorbei.
+        Das heißt master enthält jetzt alles, was im Repository enthalten ist.
+        Sie können erkennen wie sich die Farben der Commits verändert haben?
+        Um die Vorgänge zu verdeutlichen wurden diese Farbig makiert.
+       Jeder Branch hat seine eindeutige Farbe. Jeder Merge Commit bekommt als Farbe eine Mischung aus den Farben seiner Vorgänger.
+      Sie sehen also, dass die Farbe des Branch master in alle Commits gemischt wurde, die von bugFix aber nicht.
+    </p>
+    <img src="bild2.pdf" alt="Schritt2">
+    <h3>Schritt 2</h3>
+    <p>Mergen Sie nun master in bugFix:
+       <strong>git checkout bugFix;
+               git merge master </strong>
+       Da der bugFix Branch ein Vorgänger von master war, musste git hier kaum etwas tuen;
+       git verschiebt bugFix einfach auf den Commit, auf den auch der master Branch zeigt.
+       Jetzt haben alle Commits dieselbe Farbe, das heißt jeder Branch enthält die Informationen des gesamten Repositorys!
+     </p>
+</section>
+</body>
