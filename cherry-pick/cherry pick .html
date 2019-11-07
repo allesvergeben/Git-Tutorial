@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSSPrint</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<section id=Einleitung>
+<h1>Kommando: cherry-pick</h1>
+<p>
+  <h2> Wofür nutze ich cherry-pick?</h2>
+  <p> Wenn man beispielsweise einzelne, sinnvolle Commits aus einem Branch der verworfen wird, übernehmen will, eignet sich gut
+    <strong> git cherry-pick. </strong>Hiermit kann ein einzelner Commit aus einem anderen Branch "herausgepickt" und in den aktuellen Branch übernommen werden.</p>
+    <p>
+    <h2> Wie verwende ich <strong>git cherry-pick</strong> </merge>?</h2>
+      <p>Wie bereits am Titel zu erkennen ist, nutzen Sie zum herauspicken eines, oder mehrerer Commits das Kommando <strong> git cherry-pick.</strong> Im folgenden Beispiel
+        erläutere ich das Kommando visuell.</p>
+        <img src="img/cherry-pick before.png" alt="Schritt1">
+      <h3>Schritt 1</h3>
+      <p>Hier sehen wir auf der linken Seite commits des branches "side" und auf der rechten Seite commits des master branches. Wir wollen nun commits des branches "side", nämlich C2 und C4 in den master branch übernehmen. 
+     </p>
+    <img src="img/cherry-pick after.png" alt="Schritt2">
+    <h3>Schritt 2</h3>
+    <p>Übernehmen Sie nun C2 und C4 in den Master Branch:
+       <strong>git cherry-pick C2 C4.</strong>
+      Nun befinden sich die commits C2 und C4 auch im master branch. Git hat also einen Patch für die Änderungen des Commits extrahiert und erstellt nun einen neuen Commit im aktuellen, dem master branch. Wie man sieht, ist git cherry-pick sehr einfach in der Benutzung.
+     </p>
+</section>
+</body>
+</html>
