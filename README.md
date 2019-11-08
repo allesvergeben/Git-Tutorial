@@ -1,7 +1,7 @@
 # Git-Tutorial
 Git Tutorial
 
-##To-Do List
+## To-Do List
 - index-html erstellen
 - Impressum erstellen
 - div-Container für Formatierung festlegen
