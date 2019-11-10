@@ -11,15 +11,128 @@
     <h1>Grundlagen - Verwaltung</h1>
     <div>
         <h2>git init</h2>
-        <code id="init">
-            git init [-q | --quiet] [--bare] [--template=&lt;template_directory&gt;]
-            [--separate-git-dir &lt;git dir&gt;]
-            [--shared[=&lt;permissions&gt;]] [directory]
-        </code>
+        <pre class="blockcode">
+            <code>git init [-q | --quiet] [--bare] [--template=&lt;template_directory&gt;] [--separate-git-dir &lt;git dir&gt;][--shared[=&lt;permissions&gt;]] [directory]</code>
+        </pre>
         <h3>Beschreibung</h3>
         <p>
-
+            Dieser Befehl erstellt ein leeres Git-Repository - im Grunde genommen ein <code class="textcode">.git</code>
+            -Verzeichnis mit Unterverzeichnissen für Objekte, <code class="textcode">refs/heads</code>, <code
+                class="textcode">refs/tags</code> und Vorlagendateien. Es wird auch
+            eine erste <code class="textcode">HEAD</code>-Datei erstellt, die auf den HEAD des Masterzweiges verweist.
+            Wenn die Umgebungsvariable <code class="textcode">$GIT_DIR</code> gesetzt ist, gibt sie einen Pfad an, der
+            anstelle von <code class="textcode">./.git</code> für die
+            Basis des Repository verwendet werden soll.
+            <br/>
+            Wenn das Verzeichnis der Objektspeicherung über die Umgebungsvariable <code class="textcode">$GIT_OBJECT_DIRECTORY</code>
+            angegeben wird,
+            werden die sha1-Verzeichnisse darunter angelegt - andernfalls wird das Standardverzeichnis <code
+                class="textcode">$GIT_DIR/objects</code>
+            verwendet.
+            <br/>
+            Das erneute ausführen von <code class="textcode">git init</code> in einem bestehenden Repository ist kein
+            Problem. Es werden keine Daten überschreiben, die
+            bereits vorhanden sind. Jedoch kann es auch Sinnvoll sein, <code class="textcode">git init</code> erneut zu
+            benutzen. Denn mit <code class="textcode">--separate-git-dir</code>
+            ist es möglich neu hinzugefügte Vorlagen aufzunehmen oder das Repository an einen anderen Ort zu
+            verschieben.
         </p>
+        <h3>Parameter</h3>
+        <ul id="parameter">
+            <li>
+                <strong>-q oder --quiet</strong>
+                Die Konsolenausgabe beschränkt sich auf Fehler- und Warnmeldungen.
+            </li>
+            <li>
+                <strong>--bare</strong>
+                Erstell ein "Bare Repository". Ein solches Repository enthält keine funktionierende oder ausgecheckte
+                Kopie Ihrer Quelldateien.
+                Ausßerdem wird die Git-Revisionshistorie im Stammordner des Repositorys gespeichert statt in einem <code
+                    class="textcode">.git-Unterordner</code>.
+            </li>
+            <li>
+                <strong>template=&lt;template_directory&gt; --template=&lt;template_directory&gt;</strong>
+                Geben Sie das Verzeichnis an, aus dem die Vorlagen verwendet werden sollen. (Siehe Abschnitt <a
+                    href="#template">"TEMPLATE DIRECTORY"</a> unten).
+            </li>
+            <li>
+                <strong>--Separate git-dir=&lt;git dir&gt;</strong>
+                Anstatt das Repository als Verzeichnis entweder nach <code class="textcode">$GIT_DIR</code> oder <code
+                    class="textcode">./.git/</code>
+                zu initialisieren, wird eine Textdatei mit dem Pfad zum eigentlichen Repository angelegt.
+                Diese Datei fungiert als unabhängiger symbolischer Git-Link zum Repository.
+                <br/>Wenn es sich um eine Neuinitialisierung handelt, wird das Repository in den angegebenen Pfad
+                verschoben.
+            </li>
+            <li>
+                <strong>--shared[=(true|false|umask|group|all|world|everybody|0xxx)]]]</strong>
+                Gibt an, dass das Git-Repository für mehrere Benutzer freigegeben werden soll.
+                Dies ermöglicht es Benutzern, die derselben Gruppe angehören, in dieses Repository zu gelangen.
+                Bei Angabe wird die Konfigurationsvariable "core.sharedRepository" so gesetzt, dass Dateien und
+                Verzeichnisse unter <code class="textcode">$GIT_DIR</code>
+                mit den angeforderten Berechtigungen erstellt werden. Wenn nicht angegeben, verwendet Git die
+                Berechtigungen von umask(2).
+
+                <br/>Die Option kann die folgenden Werte haben, standardmäßig gruppiert, wenn kein Wert angegeben wird:
+                <ul>
+                    <li>
+                        <strong>umask (oder false)</strong>
+                        Verwende Berechtigungen, die von umask(2) gemeldet werden. Der Standard, wenn --shared nicht
+                        angegeben ist.
+                    </li>
+                    <li>
+                        <strong>group (oder true)</strong>
+                        Machen Sie das Repository gruppenbeschreibbar (und g+sx, da die git-Gruppe möglicherweise nicht
+                        die primäre Gruppe aller Benutzer ist).
+                        Dies wird verwendet, um die Berechtigungen eines ansonsten sicheren umask(2)-Wertes zu lösen.
+                        Beachten Sie, dass die umask weiterhin für die anderen Berechtigungsbits gilt (z.B. wenn umask
+                        0022 ist, entfernt die Verwendung
+                        von group keine Leserechte von anderen (Nicht-Gruppen-)Benutzern). Unter 0xxx erfahren Sie, wie
+                        Sie die Repository-Berechtigungen genau angeben können.
+
+                    </li>
+                    <li>
+                        <strong>all (oder world oder everybody)</strong>
+                        Wie Gruppe, aber das Repository für alle Benutzer lesbar machen.
+                    </li>
+                    <li>
+                        <strong>0xxx</strong>
+                        0xxx ist eine Oktalzahl und jede Datei hat den Modus 0xxx.
+                        0xxx überschreibt den Wert umask(2) des Benutzers.
+                        0640 wird ein Repository erstellen, das gruppenlesbar, aber nicht gruppenbeschreibbar oder für
+                        andere zugänglich ist.
+                        0660 erstellt einen Repo, der für den aktuellen Benutzer und die aktuelle Gruppe lesbar und
+                        beschreibbar ist, aber für andere nicht zugänglich ist.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Template Verzeichnis</h3>
+        <p>
+            Dateien und Verzeichnisse im Template-Verzeichnis, deren Name nicht mit einem Punkt beginnt, werden nach der
+            Erstellung in das <code class="textcode">$GIT_DIR</code> kopiert.
+            <br/>Template-Verzeichnis kann wie folgt angegeben werden:
+        </p>
+        <ul>
+            <li>Option <code class="textcode">--template</code></li>
+            <li>Umgebungsvariablen <code class="textcode">$GIT_TEMPLATE_DIR</code></li>
+            <li>Konfigurationsvariable <code class="textcode">init.templateDir</code></li>
+            <li>Template-Verzeichnis: <code class="textcode">/usr/share/git-core/templates</code></li>
+        </ul>
+        <p>
+            Ein Template-Verzeichnis hat oft schon ein konfigurietes Verzeichnis - daher ist es Empfehlenswert ebenfalls
+            zu wissen was <a href="https://git-scm.com/docs/gitignore">gitignore</a> und <a
+                href="https://git-scm.com/book/de/v1/Git-individuell-einrichten-Git-Hooks">githooks</a>
+            bedeutet.
+        </p>
+        <h3>Beispiel</h3>
+        <p>Bereits ein Projekt erstellt? Auch schon etwas dran gearbeitet? So kann ein Repository erstellt werden: </p>
+        <pre>
+         <code id="code-example">% cd /Pfad/zum/erstellten/Verzeichnis
+% git init
+% git add .
+% git commit</code>
+        </pre>
     </div>
     <hr>
     <div>
@@ -29,7 +142,7 @@
     <hr>
     <div>
         <h2>git clone</h2>
-    <p></p>
+        <p></p>
     </div>
     <hr>
     <div>

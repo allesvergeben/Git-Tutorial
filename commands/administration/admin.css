@@ -1,10 +1,57 @@
-code {
+pre code {
     background-color: #eee;
     border: 1px solid #999;
+    color: #5d7177;
     display: block;
-    padding: 20px;
+    padding: 12px;
 }
 
-#init {
-    margin: 0 10% 0 10%;
+h3 {
+    padding-top: 15px;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+ol {
+    text-align: left;
+    margin-top: 0;
+}
+
+ul {
+    text-align: left;
+    margin-top: 0;
+}
+
+li {
+    list-style: inherit;
+}
+
+pre {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+
+}
+
+#parameter {
+    padding: 0 0 0 16px;
+}
+
+.textcode {
+    display: inline;
+    padding: 0 6px 0 5px;
+    font-family: Courier, monospace;
+    color: #5d7177;
+    background-color: #eee;
+    border: solid 1px #efeee6;
+}
+
+#code-example {
+    width: 400px;
+    text-align: left;
 }
