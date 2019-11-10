@@ -11,7 +11,7 @@
     <h1>Grundlagen - Verwaltung</h1>
     <div>
         <h2>git init</h2>
-        <pre class="blockcode">
+        <pre>
             <code>git init [-q | --quiet] [--bare] [--template=&lt;template_directory&gt;] [--separate-git-dir &lt;git dir&gt;][--shared[=&lt;permissions&gt;]] [directory]</code>
         </pre>
         <h3>Beschreibung</h3>
@@ -38,7 +38,7 @@
             verschieben.
         </p>
         <h3>Parameter</h3>
-        <ul id="parameter">
+        <ul class="parameter">
             <li>
                 <strong>-q oder --quiet</strong>
                 Die Konsolenausgabe beschränkt sich auf Fehler- und Warnmeldungen.
@@ -128,7 +128,7 @@
         <h3>Beispiel</h3>
         <p>Bereits ein Projekt erstellt? Auch schon etwas dran gearbeitet? So kann ein Repository erstellt werden: </p>
         <pre>
-         <code id="code-example">% cd /Pfad/zum/erstellten/Verzeichnis
+         <code class="code-example">% cd /Pfad/zum/erstellten/Verzeichnis
 % git init
 % git add .
 % git commit</code>
@@ -137,12 +137,44 @@
     <hr>
     <div>
         <h2>git add</h2>
-        <p></p>
-    </div>
-    <hr>
-    <div>
-        <h2>git clone</h2>
-        <p></p>
+        <pre>
+            <code>git add &lt;file-path&gt; --all -u</code>
+        </pre>
+        <h3>Beschreibung</h3>
+        <p>Der Befehl "add" markiert Änderungen, die beim nächsten Commit berücksichtigt werden sollen.</p>
+        <h3>Parameter</h3>
+        <ul class="parameter">
+            <li>
+                <strong>&lt;file-path&gt;</strong>
+                Gibt die Dateien an, die Sie der Staging Area hinzufügen möchten.
+                Beachten Sie, dass Sie sowohl mehrere Dateipfade als auch Pfade zu Verzeichnissen eingeben können
+                (letztere werden dann alle Änderungen in diesem Verzeichnis in die Staging Area aufnehmen).
+            </li>
+            <li>
+                <strong>--all</strong>
+                Fügt alle Änderungen der Staging Area hinzu.
+                Dazu gehören geänderte Dateien, gelöschte Dateien und neue Dateien - überall im Projektverzeichnis.
+            </li>
+            <li>
+                <strong>-u</strong>
+                Fügt alle Änderungen an bestehenden Dateien zur Staging Area hinzu.
+                Dazu gehören geänderte Dateien und gelöschte Dateien - aber keine neuen Dateien, die derzeit nicht von
+                Git verfolgt werden.
+            </li>
+        </ul>
+        <h3>Beispiel</h3>
+        <p>Es können einen oder mehrere Pfade angeben und dadurch Änderungen in diesen Dateien zur Staging Area
+            hinzufügt werden:</p>
+        <pre>
+         <code class="code-example">% git add index.html error.html</code>
+        </pre>
+        <p>Diese Änderungen werden dann Teil des nächsten Commits sein.</p>
+        <br/>
+        <p>Wenn Sie möchten, dass alle aktuellen Änderungen der Staging Area hinzugefügt werden
+            (einschließlich Löschungen und neuer Dateien), kann einfach "--all" oder "-A" verwenden:</p>
+        <pre>
+         <code class="code-example">% git add --all</code>
+        </pre>
     </div>
     <hr>
     <div>
