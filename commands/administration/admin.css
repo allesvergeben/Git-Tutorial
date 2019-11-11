@@ -55,3 +55,59 @@ p {
     width: 400px;
     text-align: left;
 }
+
+.keyword {
+    color: #87005b;
+}
+
+.title {
+    color: #0065FF;
+}
+
+aside {
+    float: right;
+    width: 20%;
+    clear: both;
+    position: fixed;
+    background: #eeeeee;
+    bottom: 110px;
+    right: 40px;
+    display: none;
+    border-radius: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0;
+    transition: display 0s, opacity 0.5s linear;
+}
+
+aside ul {
+    list-style: none;
+}
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #eee;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+
+}
+
+.float:hover {
+    cursor: pointer;
+}
+
+.my-float {
+    margin-top: 12px;
+    font-size: 24px;
+    color: #494949;
+}
