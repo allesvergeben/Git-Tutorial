@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kommando: branch</title>
+  <meta charset="utf-8">
+  <link href="../CSS/stylegit.css" rel="stylesheet">
+</head>
+<body>
+<section id=Einleitung>
+<h1>Kommando: branch</h1>
+<p>
+  <h2> Wofür nutze ich branch?</h2>
+  <p><strong> Branches </strong>sind Versionszweige, die einen nebenläufigen Entwicklungsprozess abbilden. Sie sind
+    Verweise auf einen bestimmten Commit. Das Anlegen von Branches verbraucht keinerlei Speicherplatz, dies ist einer
+    der Gründe warum immer mit vielen, kleinen Branches gearbeitet werden sollte. Es wird gewährleistet, dass die Arbeit
+    eines Commits und dessen Vorgängern gesichert wird. Auch in der Teamarbeit sind Branches sehr sinnvoll, da jeder an
+    seinem eigenen Branch arbeitet, die dann später zusammengeführt werden können.
+  </p>
+<p>
+  <h2> Wie verwende ich <strong>git branch</strong>?</h2>
+      <p>Zum Anlegen eines Branches wird das Kommando <strong>git branch</strong> verwendet.
+        Beispiel: </p>
+        <img src="img/Branch1.PNG" alt="Schritt1">
+      <h3>Schritt 1</h3>
+      <p> Unser Repository weist vorerst nur zwei Commits auf. Mit dem Kommando <strong>git branch issue</strong>, sagen wir, dass ein Branch im Commit issue erstellt werden soll. Der Branch issue zeigt nun auf den Commit C1, dies ist im Bild sichtbar.
+    </p>
+    <img src="img/Branch2.PNG" alt="Schritt2">
+    <h3>Schritt 2</h3>
+    <p>Der Branch issue zeigt nun auf den Commit C1, dies ist im Bild zu erkennen.</p>
+  <p>Wenn ein bestimmter Branch angesprochen werden soll, auf dem vielleicht ein weiterer Commit erzeugt wird, muss mit
+    <strong> git checkout "Branchname"</strong>, dieser Branch angesprochen werden. Ansonsten wird der Befehl immer auf
+    dem Branch ausgeführt, auf dem man sich gerade befindet. Dies wird durch ein Sternchen * visualisiert.
+    </p>
+</section>
+</body>
+</html>
