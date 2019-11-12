@@ -10,6 +10,21 @@ section{
 li{
   list-style-type: none;
 }
+ ul li{
+  float: left;
+ margin-right: 25px;
+}
+
+ ul li a{
+  font-size: 16px;
+}
+
+ li:hover{
+  padding-top: 5px;
+}
+li{
+  list-style-type: none;
+}
 
 a{
 text-decoration: none;
@@ -63,8 +78,4 @@ header{
   background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1;
-}
-
-.body {
-  margin: 0 15% 0 15%;
 }
