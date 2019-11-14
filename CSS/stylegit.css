@@ -3,6 +3,9 @@ html, body{
   padding: 0;
   height: 100%;
   text-align: center;
+  width: 35em;
+  margin-left:250px;
+  margin-right:220px;
 }
 section{
   min-height: 100%;
@@ -62,6 +65,5 @@ img{
 p{
    margin-bottom: 50px;
    padding-bottom:25px;
-   width:35em;
-   margin-left: 500px;
+  
 }
