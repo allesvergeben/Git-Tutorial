@@ -18,12 +18,12 @@
 <p>
   <h2> Wie verwende ich <strong>git reset/revert</strong>?</h2>
       <p>Um Änderungen vorzunehmen, wird <strong>git reset</strong> oder <strong>git revert</strong> verwendet </p>
-        <img src="img/Reset1.PNG" alt="Schritt1">
-      <h3>git reset</h3>
+    <img alt="Schritt1" height="353" src="../img/Reset1.PNG" width="263"/>
+    <h3>git reset</h3>
       <p>Durch die Anwendung von <strong>git reset HEAD~1</strong> wird der master auf C1 gelegt. Also der erste Vorgänger des HEADs. Es wird nun so visualisiert, als hätte C2 nie stattgefunden. Dies ist auf dem Bild sichtbar.
       Reset wird eher in der lokalen Anwendung verwendet, da hier die Änderungen nicht mit anderen Team-Mitgliedern geteilt werden, wie bei git revert.
     </p>
-    <img src="img/Revert1.PNG" alt="Schritt2">
+    <img alt="Schritt2" height="361" src="../img/Revert1.PNG" width="229"/>
     <h3>git revert</h3>
     <p>Durch git revert besteht die Möglichkeit, Änderungen mit anderen auf einem Server zu teilen. Es wird dabei das Kommando <strong>git revert</strong> verwendet. Durch das Kommando git revert HEAD entsteht ein neuer Commit, der die Änderungen aus C2 aufheben. Dadurch dass hier ein neuer Commit entstanden ist, werden die Änderungen mit anderen Teilnehmern geteilt.</p>
 
