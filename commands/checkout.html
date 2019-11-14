@@ -26,16 +26,16 @@ Beim Auschecken von Branches wird das Arbeitsverzeichnis in Übereinstimmung mit
 	<p>
 	<h2> Hinweise </h2>
 	<p>git checkout arbeitet Hand in Hand mit git branch. Wenn wir mit einem neuen Feature beginnen wollen, erstellen wir mit git branch einen Branch und checken ihn mit git checkout aus. Wir können in einem Repository an diversen Features arbeiten, indem wir mit git checkout zwischen ihnen wechseln. </p>
-	<img alt="Master auschecken" height="396" src= "../../../../Desktop/Git-master-auschecken.png" width="424" />
+	<img alt="Master auschecken" height="97%" src= "../../../../Desktop/Vorlesungen/WebIT/Git-master-auschecken.png" width="356" />
 	<figcaption>Master auschecken</figcaption>
-	<img alt="Master auschecken" height="396" src= "../../../../Desktop/Git-master-auschecken.png" width="424" />
+	<img alt="featureauschecken" height="396" src= "../../../../Desktop/Vorlesungen/WebIT/git-Feature-auschecken.png" widt="4242" />
 	<figcaption> Feature auschecken </figcaption>
 	<p>Für jedes neue Feature einen eigenen Branch zu haben, ist ein fundamentaler Unterschied zum traditionellen SVN-Workflow. Es ist denkbar einfach, an Dingen herumzuexperimentieren, ohne befürchten zu müssen, bestehende Funktionalität kaputtzumachen, und wir können an beliebig vielen Features gleichzeitig arbeiten. Außerdem unterstützen Branches diverse Kollaborations-Workflows.</p>
 	<h2>Abgetrennter HEAD-Status</h2>
 	<p>Nachdem wir die drei wesentlichen Anwendungsfälle von git checkout kennen, sollten wir uns mit dem abgetrennten HEAD-Status beschäftigen. Der HEAD ist Gits Weg, um auf den aktuellen Snapshot Bezug zu nehmen. Intern aktualisiert der Befehl git checkout einfach den HEAD, um entweder auf den spezifischen Branch oder den Commit zu zeigen. Wenn er auf einen Branch zeigt, beschwert Git sich nicht, aber wenn wir einen Commit auschecken, wechselt es in einen abgetrennten HEAD-Status.</p>
-	<img alt="Schritt1" height="276" src="../../../../Desktop/Git-attached-HEAD.png" width="380"/>
+	<img alt="Schritt1" height="276" src="../../../../Desktop/Vorlesungen/WebIT/Git-attached-HEAD.png" width="380"/>
 	<figcaption>Attached HEAD</figcaption>
-	<img alt="Schritt2" height="276" src="../../../../Desktop/Git-attached-HEAD.png" width="380"/>
+	<<img alt="Schritt2" height="276" src="../../../../Desktop/Vorlesungen/WebIT/Git-detached-HEAD.png" width="380"/>
 	<figcaption>Detached HEAD</figcaption>
 	<p>Dies dient als Warnung, um uns zu sagen, dass alles, was wir tun, vom Rest der Projektentwicklung abgetrennt ist. Wenn wir mit der Entwicklung eines Features beginnen würden, während ein abgetrennter HEAD-Status vorliegt, würde uns kein Branch erlauben, zu ihm zurückzukehren. Wenn wir notwendigerweise einen anderen Branch auschecken (z.B. um das Feature in ihn zu mergen), gäbe es keinen Weg, unser Feature zu referenzieren:</p>
 	<img alt="checkout" height="276" src="../../../../Desktop/Git-detached-HEAD-2.png" width="380"/>
