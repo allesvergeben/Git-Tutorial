@@ -7,8 +7,24 @@
     <link rel="stylesheet" type="text/css" href="admin.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="../../JS/main.js"></script>
+    <link href="../../CSS/styleheader.css" rel="stylesheet">
 </head>
 <body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../Gitcommit.html">commit</a></li>
+            <li><a href="../branch.html">branch</a></li>
+            <li><a href="../checkout.html">checkout</a></li>
+            <li><a href="../cherry-pick.html">cherry-pick</a></li>
+            <li><a href="../reset-revert.html">reset/ revert</a></li>
+            <li><a href="../rebase.html">rebase</a></li>
+            <li><a href="../merge.html">merge</a></li>
+            <li><a href="administration.html">Verwaltung</a></li>
+        </ul>
+    </nav>
+</header>
 <a onclick="button()" class="float">
     <i class="fa fa-book fa-2x my-float"></i>
 </a>
@@ -159,7 +175,7 @@
                 Erstellung in das <code class="textcode">$GIT_DIR</code> kopiert.
                 <br/>Template-Verzeichnis kann wie folgt angegeben werden:
             </p>
-            <ul>
+            <ul class="ul">
                 <li>Option <code class="textcode">--template</code></li>
                 <li>Umgebungsvariablen <code class="textcode">$GIT_TEMPLATE_DIR</code></li>
                 <li>Konfigurationsvariable <code class="textcode">init.templateDir</code></li>
