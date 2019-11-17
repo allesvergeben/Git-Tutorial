@@ -1,3 +1,8 @@
+/* Code Blocks */
+pre {
+    margin: 0;
+}
+
 pre code {
     background-color: #eee;
     border: 1px solid #999;
@@ -27,10 +32,6 @@ ol {
     list-style: inherit;
 }
 
-pre {
-    margin: 0;
-}
-
 p {
     margin: 0;
     width: 100%;
@@ -45,6 +46,7 @@ p {
     margin-top: 0;
 }
 
+/* Code Blocks im Text */
 .textcode {
     display: inline;
     padding: 0 6px 0 5px;
@@ -67,6 +69,7 @@ p {
     color: #0065FF;
 }
 
+/* Inhaltsverzeichnis */
 aside {
     float: right;
     width: 20%;
@@ -97,6 +100,7 @@ aside li {
     list-style: inherit;
 }
 
+/* Float Button*/
 .float {
     position: fixed;
     width: 60px;
@@ -108,6 +112,7 @@ aside li {
     border-radius: 50px;
     text-align: center;
     box-shadow: 2px 2px 3px #999;
+    z-index: 1;
 
 }
 
@@ -121,4 +126,8 @@ aside li {
     color: #494949;
 }
 
+/* Anpassung Fload Button */
+footer nav ul {
+    padding-right: 100px
+}
 

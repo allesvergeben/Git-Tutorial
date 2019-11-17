@@ -63,10 +63,11 @@ footer{
   width: 100%;
   height: 70px;
   background-color: #3f3f3f;
-  position: fixed;
+  position: absolute;
+  text-align: right;
 }
 
-footer nav ul l i {
+footer nav ul li {
   float: right;
   margin-right: 25px;
   list-style-type: none;
