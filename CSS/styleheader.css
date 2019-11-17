@@ -5,11 +5,11 @@ header nav{
 
 header{
   width: 100%;
+  background-color: #3f3f3f;
   height:65px;
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -18,21 +18,17 @@ header{
 header nav ul li{
   float: left;
  margin-right: 25px;
+  list-style-type: none;
 }
 
 header nav ul li a{
   font-size: 16px;
-}
-
-li{
-  list-style-type: none;
-}
-
-a{
   font-family: 'Helvetica', sans-serif;
   font-weight: 500;
   color: white;
+  text-decoration: none;
 }
+
 #logo{
     width: 50px;
     float: left;
@@ -44,15 +40,42 @@ a{
 
 }
 
+/* The hero image */
+.hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/FWDhFCR/Hero.jpg");
+  height: Calc(100vh - 64px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-txt {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
 footer{
   width: 100%;
   height: 70px;
   background-color: #3f3f3f;
+  position: fixed;
 }
 
-footer p{
-  font-size: 12px;
-  color: #f0f0f0;
+footer nav ul li {
+  float: right;
+  margin-right: 25px;
+  list-style-type: none;
+}
 
-  padding-top: 30px;
+footer nav ul li a {
+  font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
 }
