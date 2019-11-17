@@ -68,6 +68,7 @@ footer{
 }
 
 footer nav ul li {
+  margin-top: 10px;
   float: right;
   margin-right: 25px;
   list-style-type: none;
