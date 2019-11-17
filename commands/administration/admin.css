@@ -1,3 +1,8 @@
+/* Code Blocks */
+pre {
+    margin: 0;
+}
+
 pre code {
     background-color: #eee;
     border: 1px solid #999;
@@ -17,17 +22,14 @@ ol {
     margin-top: 0;
 }
 
-ul {
+.ul {
     text-align: left;
     margin-top: 0;
+    padding: 0 0 0 16px;
 }
 
-li {
+.ul li {
     list-style: inherit;
-}
-
-pre {
-    margin: 0;
 }
 
 p {
@@ -40,8 +42,11 @@ p {
 
 .parameter {
     padding: 0 0 0 16px;
+    text-align: left;
+    margin-top: 0;
 }
 
+/* Code Blocks im Text */
 .textcode {
     display: inline;
     padding: 0 6px 0 5px;
@@ -64,6 +69,7 @@ p {
     color: #0065FF;
 }
 
+/* Inhaltsverzeichnis */
 aside {
     float: right;
     width: 20%;
@@ -86,8 +92,15 @@ aside {
 
 aside ul {
     list-style: none;
+    margin-top: 0;
+    text-align: left;
 }
 
+aside li {
+    list-style: inherit;
+}
+
+/* Float Button*/
 .float {
     position: fixed;
     width: 60px;
@@ -99,6 +112,7 @@ aside ul {
     border-radius: 50px;
     text-align: center;
     box-shadow: 2px 2px 3px #999;
+    z-index: 1;
 
 }
 
@@ -112,8 +126,8 @@ aside ul {
     color: #494949;
 }
 
-.body {
-    margin: 0 15% 0 15%;
+/* Anpassung Fload Button */
+footer nav ul {
+    padding-right: 100px
 }
-
 

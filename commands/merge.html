@@ -4,10 +4,25 @@
   <title>Kommando:merge</title>
   <meta charset="utf-8">
     <link href="../CSS/stylegit.css" rel="stylesheet">
-
+    <link href="../CSS/styleheader.css" rel="stylesheet">
 </head>
 <body>
-<section id=Einleitung>
+<header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="Gitcommit.html">commit</a></li>
+            <li><a href="branch.html">branch</a></li>
+            <li><a href="checkout.html">checkout</a></li>
+            <li><a href="cherry-pick.html">cherry-pick</a></li>
+            <li><a href="reset-revert.html">reset/ revert</a></li>
+            <li><a href="rebase.html">rebase</a></li>
+            <li><a href="merge.html">merge</a></li>
+            <li><a href="administration/administration.html">init & add</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="wrapper" id=Einleitung>
 <h1>Kommando: mergen</h1>
 <p>
   <h2> Wofür nutze ich mergen?</h2>
@@ -19,7 +34,7 @@
       <p>Wie bereits am Titel zu erkennen nutzen Sie zum mergen das Kommando <strong> git merge</strong> im folgenden Beispiel
         erläutere ich das Kommando visuell.</p>
         <div class="Bilder">
-            <img src="img/bild1.pdf">
+          <img alt="Schritt1" height="276" src="../img/bild1.png" width="380"/>
 </div>
       <h3>Schritt 1</h3>
       <p>Zunächst zeigt master nun auf einen Commit mit zwei Vorgängern.
@@ -31,8 +46,9 @@
       Sie sehen also, dass die Farbe des Branch master in alle Commits gemischt wurde, die von bugFix aber nicht.
     </p>
     <div class="Bilder">
-    <img src="img/bild2.pdf" alt="Schritt2">
-  </div>
+    <img alt="Schritt2" height="276" src="../img/bild2.png" width="380"/>
+
+    </div>
     <h3>Schritt 2</h3>
     <p>Mergen Sie nun master in bugFix:
        <strong>git checkout bugFix;
@@ -44,5 +60,11 @@
 </section>
 </body>
 <footer>
+    <nav>
+        <ul>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../quellen.html">Quellen</a></li>
+        </ul>
+    </nav>
 </footer>
 </html>
